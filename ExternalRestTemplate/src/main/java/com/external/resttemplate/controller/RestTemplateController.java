@@ -18,7 +18,7 @@ public class RestTemplateController {
 	private static String url ="https://restcountries.eu/rest/v2/all";
 	 
 	@GetMapping("/countries")
-	public List<Object> getCountries(){
+	public List<Object> getAllCountries(){
 		Object[] countries = restTemplate.getForObject(url, Object[].class);
 		return Arrays.asList(countries);
 	}
