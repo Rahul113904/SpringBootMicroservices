@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
+
 @RestController
 public class RestTemplateController {
 
@@ -15,10 +16,10 @@ public class RestTemplateController {
 	private RestTemplate restTemplate;
 	
 	private static String url ="https://restcountries.eu/rest/v2/all";
-	
+	 
 	@GetMapping("/countries")
-	public List<Object> getCountries(){
-		Object[] countries = restTemplate.getForObject(url, Object[].class); 
+	public List<Object> getAllCountries(){
+		Object[] countries = restTemplate.getForObject(url, Object[].class);
 		return Arrays.asList(countries);
 	}
 }
