@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<table class="u-full-width">
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Capital</th>
+        <th>Region</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="country : ${users}">
+        <td th:text="${country.id}"></td>
+        <td th:text="${country.name}"></td>
+        <td th:text="${country.capital}"></td>
+        <td th:text="${country.region}"></td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>
