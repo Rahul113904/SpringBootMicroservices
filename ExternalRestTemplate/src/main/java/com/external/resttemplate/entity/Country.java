@@ -1,8 +1,12 @@
 package com.external.resttemplate.entity;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -19,4 +23,8 @@ public class Country {
 	private String name;
 	private String capital;
 	private String region;
+
+	@OneToMany(targetEntity = Currencies.class, cascade = CascadeType.ALL)
+	private List<Currencies> currencies;
+	private List<String> borders;
 }
