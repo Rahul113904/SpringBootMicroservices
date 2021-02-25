@@ -21,7 +21,7 @@ public class RestTemplateController {
 
 	@Autowired
 	private RestTemplate restTemplate;
-
+	
 	@Value("${api.key}")
 	private String api_key;
 
@@ -44,8 +44,9 @@ public class RestTemplateController {
 	}
 
 	@GetMapping("/movie/{movie_id}")
-	public Movie getMovie(@PathVariable String movie_id) {
-		Movie movie = restTemplate.getForObject(movie_url + movie_id +"?api_key=" + api_key, Movie.class);
+	public Movie getMovie(@PathVariable(name = "movie_id") int id) {
+		Movie movie = restTemplate.getForObject(movie_url + id +"?api_key=" + api_key, Movie.class);
 		return movie;
 	} 
+	
 } 
